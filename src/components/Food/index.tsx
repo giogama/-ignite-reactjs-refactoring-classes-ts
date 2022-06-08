@@ -7,17 +7,18 @@ import api from '../../services/api';
 
 interface FoodType {
   id: number;
-    name: string;
-    image: string;
-    description: string;
-    price:number;
+  name: string;
+  image: string;
+  description: string;
+  price:number;
+  available?:boolean;
 }
 
 interface FoodProps {
   food: FoodType;
-  isAvailable: boolean;
-  handleEditFood:(food:FoodType)=> {};
-  handleDelete:(id:number)=>{};
+  isAvailable?: boolean;
+  handleEditFood(food:FoodType):void;
+  handleDelete(id:number):void;
 }
 
 const Food = ({food, handleEditFood, handleDelete}:FoodProps): JSX.Element => {
